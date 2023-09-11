@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Rubik+Iso&display=swap');
+
+:root{
+    font: 'Kanit', sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 1) , rgba(34, 33, 33, 0.69) , rgba(0, 0, 0, 1));
+    transition: 0.1s;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.list{
+    height: 280px;
+    background-color: rgba(47, 39, 51, 0.23);
+    box-shadow: 0px 4px 6px rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 380px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block; 
+    transition: 0.1s;
+}
+
+@keyframes fadeIn {
+    from {
+        width: 0%;
+        opacity:0.4; 
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTextArea {
+    from {
+        width: 100px;
+        opacity:0.4; 
+    }
+    to {
+        width: 230px;
+        opacity: 1;
+    }
+}
+
+
+
+
+.task{
+    
+    position: relative;
+    right: -50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content:space-between  ;
+    align-items: center;
+    min-height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    margin-bottom: 3px;
+    animation: fadeIn 1s forwards  ;
+    background-color: transparent;
+    color: white;
+}
+
+
+
+.selected {
+    outline: 2px solid rgb(4, 50, 255);
+    outline-style: solid;
+    outline-offset: 1px;
+    border-radius: 2px;
+
+}
+
+@keyframes complete{
+    from{
+        background-color: rgba(49, 49, 53, 0.801);
+    }
+    50%{
+        background-color: rgba(255, 0, 0, 0.425);
+    }
+    to{
+        background-color: rgba(49, 49, 53, 0.801);
+    }
+}
+
+
+
+.task[complete="true"] > textarea{ 
+    text-decoration: line-through;
+    text-decoration-color: white;
+}
+
+.task[complete="true"]{ 
+
+    animation: complete 0.5s  normal;
+}
+
+.selected[complete="true"] { 
+    outline-color: rgb(241, 53, 53);
+    animation: complete 0.5s  normal;
+}
+
+.addtask{
+    position: relative;
+    right: -50%;
+    transform: translateX(-50%);
+    transition: 0.4s;
+    margin-top: 20xp;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.212);
+    background-color: rgba(49, 49, 53, 0.801);
+    color: white;
+    padding: none;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.addtask:active{
+    background-color: rgba(99, 99, 102, 0.801);
+}
+
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.addtask span:hover, .addtask span:focus , .addtask:focus span{
+    display: block;
+    transform-origin: center;
+    animation: spin 0.5s infinite normal;
+}
+
+.addtask:hover,.addtask:focus {
+    background-color: rgba(8, 14, 19, 0.267);
+}
+
+.time input {
+    width: 23px;
+    height: 18px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-family:'Kanit', sans-serif;
+    color: white;
+    font-size: 15px;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+
+
+
+.time{
+    width: 60px;
+    height:inherit;
+    background-color: rgba(217, 217, 217, 0.1);
+    font-family: var(font);
+    color: white;
+    max-height: 80px;   
+}
+
+html ::-webkit-scrollbar{
+    width: 1px;
+}
+
+
+
+.limit{
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.end{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height:18px;
+    font-family:'Kanit', sans-serif;
+    font-size: 15px;
+}
+
+
+@keyframes fadeInTextarea{
+    form{
+        width: 20px;
+    }
+    to{
+        width: 230px;
+    }
+}
+
+textarea{
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 230px;
+    resize: none;
+    outline: none;
+    background-color: rgba(217, 217, 217, 0.1);    
+    border: 0px solid rgba(217, 217, 217, 0.1);
+    min-height: 20px;
+    font-family: 'Kanit', sans-serif;
+    color: inherit;
+    text-align:center;
+    text-justify:center;
+    font-weight: 300;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 100%;
+    animation: fadeInTextArea 1.5s forwards;
+
+}
+
