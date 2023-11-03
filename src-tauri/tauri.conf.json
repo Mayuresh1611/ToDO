@@ -36,6 +36,7 @@
     },
     "windows": [
       {
+        "single" : true,
         "fullscreen": false,
         "resizable": false,
         "title": "To_do",
